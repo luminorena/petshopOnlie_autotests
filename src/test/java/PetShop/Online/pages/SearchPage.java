@@ -7,6 +7,8 @@ import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.selector.ByAttribute;
 import org.aeonbits.owner.ConfigFactory;
 
+import java.util.Properties;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -31,7 +33,6 @@ public class SearchPage {
     public void openMainPage() {
         WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
         open(config.baseUrl());
-
     }
 
     public void searchItem(String testData) {
