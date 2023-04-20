@@ -21,18 +21,18 @@ public class ProjectConfiguration {
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
 
-        logger.warn("baseUrl ", Configuration.baseUrl = webConfig.baseUrl());
-        logger.warn("browser ",Configuration.browser = webConfig.browser());
-        logger.warn("browserVersion ",Configuration.browserVersion = webConfig.browserVersion());
+        logger.warn(Configuration.baseUrl = webConfig.baseUrl());
+        logger.warn(Configuration.browser = webConfig.browser());
+        logger.warn(Configuration.browserVersion = webConfig.browserVersion());
 
     if (webConfig.isRemote()) {
         Configuration.remote = webConfig.remoteWebDriverUrl();
-        logger.warn("remoteUrl " ,Configuration.remote = webConfig.remoteWebDriverUrl());
+        logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        logger.warn("capabilities ", capabilities);
+        logger.warn(String.valueOf(capabilities));
         }
     }
 
