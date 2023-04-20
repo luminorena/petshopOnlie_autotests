@@ -24,10 +24,10 @@ public class ProjectConfiguration {
         logger.warn(Configuration.baseUrl = webConfig.baseUrl());
         logger.warn(Configuration.browser = webConfig.browser());
         logger.warn(Configuration.browserVersion = webConfig.browserVersion());
+        logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
 
     if (webConfig.isRemote()) {
         Configuration.remote = webConfig.remoteWebDriverUrl();
-        logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
