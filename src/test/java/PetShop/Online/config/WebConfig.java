@@ -8,11 +8,11 @@ import org.aeonbits.owner.Config;
         "classpath:${env}.properties"
 })
 public interface WebConfig extends Config {
-    @DefaultValue("FIREFOX")
+   // @DefaultValue("FIREFOX")
     @Key("browser")
     String browser();
 
-    @DefaultValue("112")
+  //  @DefaultValue("112")
     @Key("browserVersion")
     String browserVersion();
 
@@ -21,10 +21,10 @@ public interface WebConfig extends Config {
     String remoteWebDriverUrl();
 
     @Key("baseUrl")
-    @DefaultValue("https://www.petshop.ru")
+  //  @DefaultValue("https://www.petshop.ru")
     String baseUrl();
 
-    @DefaultValue("false")
+  //  @DefaultValue("false")
     @Key("isRemote")
     boolean isRemote();
 }

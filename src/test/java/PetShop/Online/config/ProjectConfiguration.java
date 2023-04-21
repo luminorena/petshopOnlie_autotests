@@ -23,7 +23,7 @@ public class ProjectConfiguration {
         logger.warn(Configuration.baseUrl = webConfig.baseUrl());
         logger.warn(Configuration.browser = webConfig.browser());
         logger.warn(Configuration.browserVersion = webConfig.browserVersion());
-        logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
+
 
     if (webConfig.isRemote()) {
         Configuration.remote = webConfig.remoteWebDriverUrl();
@@ -31,8 +31,11 @@ public class ProjectConfiguration {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        logger.warn(String.valueOf(capabilities));
         }
+
+    logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
+
+
     }
 
 }
