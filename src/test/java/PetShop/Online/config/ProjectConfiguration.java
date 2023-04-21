@@ -32,6 +32,7 @@ public class ProjectConfiguration {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         logger.warn(String.valueOf(capabilities));
+
         }
 
         logger.warn(Configuration.remote = webConfig.remoteWebDriverUrl());
