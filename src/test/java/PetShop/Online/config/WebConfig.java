@@ -17,11 +17,12 @@ public interface WebConfig extends Config {
     String browserVersion();
 
 
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     @Key("remoteWebDriverUrl")
     String remoteWebDriverUrl();
 
     @Key("baseUrl")
-  //  @DefaultValue("https://www.petshop.ru")
+    @DefaultValue("https://www.petshop.ru")
     String baseUrl();
 
   //  @DefaultValue("false")
