@@ -16,7 +16,6 @@ public class ProjectConfiguration {
     public void webConfig() {
         org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(ProjectConfiguration.class);
 
-
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
