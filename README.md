@@ -67,13 +67,13 @@ allure serve build/allure-results
 ###  Основная страница
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/allure_main_page.png">
+<img title="Allure Overview Dashboard" src="images/screens/allure_mainpage.png">
 </p>
 
 ###  Страница с тестами и статистикой
 
 <p align="center">
-<img title="Allure Tests" src="images/screens/allure_suites.png">
+<img title="Allure Tests" src="images/screens/alluresuites.png">
 </p>
 
 
