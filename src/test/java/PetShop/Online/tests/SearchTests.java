@@ -33,7 +33,7 @@ public class SearchTests extends TestBase {
             Assertions.assertEquals(expectedTitle, actualTitle, String.valueOf(Duration.ofSeconds(3)));
         });
     }
-    
+
     @ParameterizedTest(name = "Проверка поиска по категориям для запроса {0}")
     @ValueSource(strings = {"pro plan", "felix"})
     void searchItemsTests(String testData) {
