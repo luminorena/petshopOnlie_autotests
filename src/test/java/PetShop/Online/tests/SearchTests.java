@@ -34,8 +34,9 @@ public class SearchTests extends TestBase {
         });
     }
 
-    @ParameterizedTest(name = "Проверка поиска по категориям для запроса {0}")
+
     @ValueSource(strings = {"pro plan", "felix"})
+    @ParameterizedTest(name = "Проверка поиска по категориям для запроса {0}")
     void searchItemsTests(String testData) {
         step("Логин в систему", () -> {
             searchPage.openMainPage();
