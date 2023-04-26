@@ -40,7 +40,7 @@ Java Gradle IntelliJ IDEA Selenide Selenoid JUnit5 Jenkins Allure Report Allure 
 
  ✓ Проверка открытия главной страницы <br>
  ✓ Проверка поиска по категориям для разных запросов (параметризованные тесты) <br>
- ✓ Проверка наличия меню на сацте <br>
+ ✓ Проверка наличия меню на сайте <br>
  ✓ Проверка блока данных о компании <br>
  ✓ Проверка работы кнопки 'Магазины' <br>
 
@@ -48,9 +48,9 @@ Java Gradle IntelliJ IDEA Selenide Selenoid JUnit5 Jenkins Allure Report Allure 
 
 Тесты запускаются в терминале командой:
 ```bash
-gradle clean test
+-Denv=local
 ```
-Allure отчёт можно получить следующим образом командой терминала:
+Запуск Allure отчёта через терминал:
 ```bash
 allure serve build/allure-results
 ```
