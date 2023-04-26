@@ -4,6 +4,7 @@ import PetShop.Online.data.MainElements;
 import PetShop.Online.pages.SearchPage;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -49,6 +50,7 @@ public class SearchTests extends TestBase {
 
     }
 
+
     @DisplayName("Проверка наличия табов")
     @EnumSource(MainElements.class)
     @ParameterizedTest
@@ -58,10 +60,11 @@ public class SearchTests extends TestBase {
         });
 
         step("Проверка, что все табы на месте", () -> {
-            searchPage.findItems(mainElements);
+            searchPage.checkItemsVisibility(mainElements);
         });
 
     }
+
 
     @DisplayName("Проверка данных о компании")
     @Test
@@ -71,11 +74,12 @@ public class SearchTests extends TestBase {
         });
 
         step("Проверка наличия блока о Компании", () -> {
-            searchPage.companyInfo();
+            searchPage.showCompanyInfo();
             searchPage.aboutCompany.shouldHave(Condition.partialText("Petshop.ru является самым крупным интернет-магазином товаров для животных в России"));
         });
 
     }
+
 
     @Test
     @DisplayName("Проверка работы кнопки 'Магазины'")
@@ -85,7 +89,7 @@ public class SearchTests extends TestBase {
         });
 
         step("Проверка данных в блоке 'Магазины'", () -> {
-            searchPage.shopButton();
+            searchPage.clickShopButton();
             searchPage.shopData
                     .shouldHave(Condition.partialText("При заказе через интернет-магазин и выборе такого способа доставки, как самовывоз из магазина, действует цена сайта на момент оформления заказа."));
         });

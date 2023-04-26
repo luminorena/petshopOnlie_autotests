@@ -23,7 +23,4 @@ public interface WebConfig extends Config {
     @DefaultValue("https://www.petshop.ru")
     String baseUrl();
 
-   @DefaultValue("false")
-    @Key("isRemote")
-    boolean isRemote();
 }
