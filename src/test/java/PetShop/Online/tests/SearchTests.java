@@ -1,10 +1,10 @@
 package PetShop.Online.tests;
 
+import PetShop.Online.config.ProjectConfiguration;
 import PetShop.Online.data.MainElements;
 import PetShop.Online.pages.SearchPage;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,13 +19,14 @@ import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
     SearchPage searchPage = new SearchPage();
+    ProjectConfiguration projectConfiguration = new ProjectConfiguration();
 
 
     @DisplayName("Проверка открытия главной страницы")
     @Test
     void openMainPage() {
         step("Логин в систему", () -> {
-            searchPage.openMainPage();
+            projectConfiguration.openMainPage();
         });
 
         step("Проверка, что страница открылась", () -> {
@@ -35,12 +36,11 @@ public class SearchTests extends TestBase {
         });
     }
 
-
     @ValueSource(strings = {"pro plan", "felix"})
     @ParameterizedTest(name = "Проверка поиска по категориям для запроса {0}")
     void searchItemsTests(String testData) {
         step("Логин в систему", () -> {
-            searchPage.openMainPage();
+            projectConfiguration.openMainPage();
         });
 
         step("Проверка появления Каталога после успешного поиска", () -> {
@@ -56,7 +56,7 @@ public class SearchTests extends TestBase {
     @ParameterizedTest
     void checkTitleItems(MainElements mainElements) {
         step("Логин в систему", () -> {
-            searchPage.openMainPage();
+            projectConfiguration.openMainPage();
         });
 
         step("Проверка, что все табы на месте", () -> {
@@ -70,7 +70,7 @@ public class SearchTests extends TestBase {
     @Test
     void aboutCompany() {
         step("Логин в систему", () -> {
-            searchPage.openMainPage();
+            projectConfiguration.openMainPage();
         });
 
         step("Проверка наличия блока о Компании", () -> {
@@ -85,7 +85,7 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка работы кнопки 'Магазины'")
     void shopButtonCheck() {
         step("Логин в систему", () -> {
-            searchPage.openMainPage();
+            projectConfiguration.openMainPage();
         });
 
         step("Проверка данных в блоке 'Магазины'", () -> {

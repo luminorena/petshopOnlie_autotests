@@ -10,14 +10,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.io.IOException;
+
 public class TestBase {
 
-    private static final WebConfig webConfig = ConfigReader.Instance.read();
-
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws IOException {
         SelenideLogger.addListener("allure", new AllureSelenide());
         ProjectConfiguration.loadWebConfig();
+
+
     }
 
     @BeforeEach

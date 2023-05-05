@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.UnsupportedCommandException;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -49,7 +50,7 @@ public class Attach {
                     "Browser console logs",
                     String.join("\n", Selenide.getWebDriverLogs(BROWSER))
             );
-        } catch (Exception e) {
+        } catch (UnsupportedCommandException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
