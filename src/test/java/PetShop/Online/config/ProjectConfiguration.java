@@ -43,28 +43,7 @@ public class ProjectConfiguration {
 
 
     }
-    public void openMainPage() throws IOException {
-        String baseUrl = Configuration.baseUrl;
-        InputStream inputStream = null;
-        try {
-            Properties prop = new Properties();
-            String propFileName = "local.properties";
-            inputStream = ProjectConfiguration.class.getClassLoader().getResourceAsStream(propFileName);
-            if (inputStream != null) {
-                prop.load(inputStream);
-            } else {
-                throw new FileNotFoundException("файл не надйден");
-            }
-            baseUrl = prop.getProperty("baseUrl");
-            System.out.println(baseUrl);
-        } catch (Exception e) {
-            System.out.println("Exception: " + e);
-        } finally {
-            assert inputStream != null;
-            inputStream.close();
-        }
-        open(baseUrl);
-    }
+
 }
 
 

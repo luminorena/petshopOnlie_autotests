@@ -26,6 +26,10 @@ public class SearchPage {
             aboutCompany = $(".about-page-text"),
             shopData = $(".oupost-content-text");
 
+    public void openMainPage(){
+        open("/");
+    }
+
 
     public void searchItem(String testData) {
         searchInput.setValue(testData).pressEnter();

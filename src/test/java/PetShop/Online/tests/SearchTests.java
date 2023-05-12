@@ -19,14 +19,13 @@ import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
     SearchPage searchPage = new SearchPage();
-    ProjectConfiguration projectConfiguration = new ProjectConfiguration();
 
 
     @DisplayName("Проверка открытия главной страницы")
     @Test
     void openMainPage() {
         step("Логин в систему", () -> {
-            projectConfiguration.openMainPage();
+            searchPage.openMainPage();
         });
 
         step("Проверка, что страница открылась", () -> {
@@ -40,7 +39,7 @@ public class SearchTests extends TestBase {
     @ParameterizedTest(name = "Проверка поиска по категориям для запроса {0}")
     void searchItemsTests(String testData) {
         step("Логин в систему", () -> {
-            projectConfiguration.openMainPage();
+            searchPage.openMainPage();
         });
 
         step("Проверка появления Каталога после успешного поиска", () -> {
@@ -56,7 +55,7 @@ public class SearchTests extends TestBase {
     @ParameterizedTest
     void checkTitleItems(MainElements mainElements) {
         step("Логин в систему", () -> {
-            projectConfiguration.openMainPage();
+            searchPage.openMainPage();
         });
 
         step("Проверка, что все табы на месте", () -> {
@@ -70,7 +69,7 @@ public class SearchTests extends TestBase {
     @Test
     void aboutCompany() {
         step("Логин в систему", () -> {
-            projectConfiguration.openMainPage();
+            searchPage.openMainPage();
         });
 
         step("Проверка наличия блока о Компании", () -> {
@@ -85,7 +84,7 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка работы кнопки 'Магазины'")
     void shopButtonCheck() {
         step("Логин в систему", () -> {
-            projectConfiguration.openMainPage();
+            searchPage.openMainPage();
         });
 
         step("Проверка данных в блоке 'Магазины'", () -> {
